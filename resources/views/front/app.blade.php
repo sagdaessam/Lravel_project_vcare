@@ -41,7 +41,17 @@
                             href="{{url('majors')}}">majors</a>
                         <a type="button" class="btn btn-outline-light navigation--button"
                             href="{{url('doctors.index')}}">Doctors</a>
-                        <a type="button" class="btn btn-outline-light navigation--button" href="{{url('login')}}">login</a>
+                        @guest()
+                        <a type="button" class="btn btn-outline-light navigation--button" href="{{route('login')}}">login</a>
+                        <a type="button" class="btn btn-outline-light navigation--button" href="{{route('auth.register')}}">Register</a>
+                        @endguest
+
+                        @auth
+                            <form action="{{route('auth.logout')}}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-outline-light navigation--button" href="{{route('auth.register')}}">Logout</button>
+                            </form>
+                        @endauth
                     </div>
                 </div>
             </div>
@@ -124,7 +134,7 @@
         </div>
     </div>
     <div class="bottom--right bg-blue text-white">
-        <img src="{{asset('front')}}/assets/images/banner.jpg" class="img-fluid banner-img">
+        <img src="{{asset('front')}}/assets/images/banner.jpeg" class="img-fluid banner-img">
     </div>
 </div>
 </div>
@@ -149,8 +159,10 @@
             <a href="{{url('/')}}" class="link text-white">Home</a>
             <a href="{{url('majors')}}" class="link text-white">Majors</a>
             <a href="{{url('doctors/index')}}" class="link text-white">Doctors</a>
-            <a href="{{url('login')}}" class="link text-white">Login</a>
-            <a href="{{url('register')}}" class="link text-white">Register</a>
+            @guest
+            <a href="{{route('login')}}" class="link text-white">Login</a>
+            <a href="{{route('auth.register')}}" class="link text-white">Register</a>
+            @endguest
             <a href="{{url('contact')}}" class="link text-white">Contact</a>
         </div>
     </div>
