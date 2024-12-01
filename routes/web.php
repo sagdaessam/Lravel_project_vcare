@@ -16,7 +16,7 @@ use App\Http\Controllers\Front\HomeController;
 // });
 
 
-Route::get( "/", [HomeController::class , "index"])->name('home');
+Route::get( "/", [HomeController::class , "index"])->name('home')->middleware('admin.area');
 Route::get( "history", [HistoryController::class , "index"]);
 Route::get( "login", [LoginController::class , "index"]);
 Route::get( "majors", [MajorController::class , "index"]);

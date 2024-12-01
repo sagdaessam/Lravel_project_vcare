@@ -37,7 +37,8 @@ class AppointmentController extends Controller
         $appointment->doctor_id = $user->id;
         $appointment->save();
 
-        Mail::to(auth()->user()->email)->send(new ConfirmationAppointmentMail());
+        Mail::to(auth()->user()->email)->send(new ConfirmationAppointmentMail($appointment));
+
 
         return redirect()->back()->with('success','Your appointment has been sent Successfully');
 
