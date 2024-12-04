@@ -1,4 +1,4 @@
-{{-- @extends('front.app')
+@extends('front.app')
 @section('content')
 
 <div class="container">
@@ -25,4 +25,4 @@
 
 </div>
 
-@endsection --}}
+@endsection

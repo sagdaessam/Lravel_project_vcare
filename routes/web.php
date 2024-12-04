@@ -16,7 +16,7 @@ use App\Http\Controllers\Front\HomeController;
 // });
 
 
-Route::get( "/", [HomeController::class , "index"])->name('home')->middleware('admin.area');
+Route::get( "/", [HomeController::class , "index"])->name('home');
 Route::get( "history", [HistoryController::class , "index"]);
 Route::get( "login", [LoginController::class , "index"]);
 Route::get( "majors", [MajorController::class , "index"]);
@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function(){
     Route::post( "appointments/{user}", [AppointmentController::class , "store"])->name('appointments.store');
 
 });
+
 
 Route::get( "doctors.index", [IndexController::class , "index"]);
 

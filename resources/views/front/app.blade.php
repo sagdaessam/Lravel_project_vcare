@@ -144,14 +144,18 @@
 <div class="row gap-2">
 
     <div class="col-sm order-sm-1">
-        <h1 class="h1">About Us</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa nesciunt repellendus itaque,
-            laborum
-            saepe
-            enim maxime, delectus, dicta cumque error cupiditate nobis officia quam perferendis consequatur
-            cum
-            iure
-            quod facere.</p>
+        <h2 class="h1">About Us</h2>
+        <p>
+             Welcome to <b>VCare</b> , your trusted platform for connecting patients with experienced doctors.
+             Our mission is to provide accessible and efficient healthcare solutions, ensuring you get the care you deserve.
+            <ul>
+                <h5>  Our services include:</h5>
+                <li>Comprehensive doctor profiles</li>
+                <li> Easy appointment booking </li>
+                <li> Trusted medical information </li>
+            </ul>
+          <b> We are dedicated to improving healthcare accessibility for everyone. </b>
+        </p>
     </div>
     <div class="col-sm order-sm-2">
         <h1 class="h1">Links</h1>
@@ -163,7 +167,10 @@
             <a href="{{route('login')}}" class="link text-white">Login</a>
             <a href="{{route('auth.register')}}" class="link text-white">Register</a>
             @endguest
+            @can('make-appointment')
             <a href="{{url('contact')}}" class="link text-white">Contact</a>
+
+            @endcan
         </div>
     </div>
 </div>

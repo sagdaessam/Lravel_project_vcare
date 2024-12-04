@@ -17,7 +17,7 @@
           <a class="text-decoration-none" href="{{url('doctor')}}">doctors</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
-            {{auth()->user()->name}}
+            {{auth()->user()->name ?? ''}}
         </li>
       </ol>
     </nav>
@@ -49,9 +49,9 @@
 
           <div class="mb-3">
             <label class="form-label required-label" for="name">Name</label>
-            <input type="text" name="name" value="{{auth()->user()->name}}" class="form-control" id="name"  />
+            <input type="text" name="name" value="{{auth()->user()->name ?? ''}}" class="form-control" id="name"  />
           </div>
-       
+
 
           <div class="mb-3">
             <label class="form-label required-label" for="phone" >Phone</label >
@@ -61,7 +61,7 @@
 
           <div class="mb-3">
             <label class="form-label required-label" for="email" >Email</label >
-            <input type="email" name="email" value="{{auth()->user()->email}}" class="form-control" id="email"  />
+            <input type="email" name="email" value="{{auth()->user()->email ?? ''}}" class="form-control" id="email"  />
           </div>
 
 

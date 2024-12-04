@@ -15,6 +15,10 @@ class adminArea
      */
     public function handle(Request $request, Closure $next): Response
     {
+       if($request->name == "hamada"){
         return $next($request);
+       }
+
+      return redirect('/majors');
     }
 }
