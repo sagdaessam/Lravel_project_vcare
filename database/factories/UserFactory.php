@@ -31,7 +31,7 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'role'=>$role ,
             'major_id'=> $role == 'doctor' ? rand(1,100) : null,
-            'image'=>"2.png",
+            'image'=>"3.jpg",
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
         ];
